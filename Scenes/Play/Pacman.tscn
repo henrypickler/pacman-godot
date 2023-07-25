@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dic6ilubc773w"]
+
+[ext_resource type="SpriteFrames" uid="uid://mldvxafmmcm6" path="res://Scenes/Play/pacman-anim.tres" id="1_i2j6h"]
+
+[node name="Pacman" type="Node2D"]
+position = Vector2(158, 80)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_i2j6h")
+autoplay = "default"
+frame = 1
