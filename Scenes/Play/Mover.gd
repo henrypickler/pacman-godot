@@ -62,8 +62,6 @@ func _update_path():
 	curve.set_point_out(0, from_dir_vec*grid_size/1.5)
 	curve.set_point_in(0, to_dir_vec*grid_size/1.5)
 	curve.set_point_position(1, to)
-	
-	print("from ", from_direction, " - ", from, " to ", to_direction, " - ", to)
 
 func _is_new_direction_valid(dir):
 	var pos = grid_pos + dir_to_vec(dir)
@@ -90,7 +88,6 @@ func set_new_direction():
 		to_direction = directions.NONE
 
 func _end_of_path():
-	print("END OF PATH")
 	from_direction = to_direction
 	emit_signal("reached_end_of_path")
 	set_new_direction()
@@ -117,7 +114,6 @@ func _process(delta):
 		t += movement_speed*delta
 	
 	while t >= curve.get_baked_length() and not stopped:
-		print("FINISHED ", t)
 		t -= curve.get_baked_length()
 		grid_pos += dir_to_vec(to_direction)
 		_end_of_path()

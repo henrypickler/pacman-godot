@@ -16,4 +16,3 @@ layer_0/tile_data = PackedInt32Array(0, 65537, 0, 65536, 1, 1, 131072, 1, 1, 196
 [node name="Player" parent="." node_paths=PackedStringArray("Tilemap") instance=ExtResource("2_5vp43")]
 position = Vector2(46, 71)
 Tilemap = NodePath("../TileMap")
-rotate_with_curve = false
