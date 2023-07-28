@@ -19,6 +19,5 @@ curve = SubResource("Curve2D_jopu0")
 [node name="Body" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
-scale = Vector2(-1, -1)
 sprite_frames = ExtResource("1_0sv38")
 autoplay = "default"

@@ -5,7 +5,7 @@ extends Node2D
 @onready var Path = $Path2D
 
 var t = 0
-@export var movement_speed = 15
+@export var movement_speed = 36
 
 enum directions {
 	NONE,
@@ -15,15 +15,16 @@ enum directions {
 	RIGHT
 }
 var from_direction = directions.NONE
-var to_direction = directions.RIGHT
-var new_direction = directions.RIGHT
+var to_direction = directions.NONE
+var new_direction = directions.NONE
 
 var grid_pos : Vector2i
 var grid_size : Vector2
 
 const CURVE_TESSELATE_STAGES = 10
-var curve : PackedVector2Array
+var curve : Curve2D
 var curve_length : float
+var stopped : bool
 
 func dir_to_vec(dir) -> Vector2i:
 	match dir:
@@ -40,9 +41,6 @@ func dir_to_vec(dir) -> Vector2i:
 		_:
 			return Vector2i.ZERO
 
-func get_new_direction():
-	return new_direction
-
 func get_body_map_position_in_tilemap() -> Vector2i:
 	return Tilemap.local_to_map(Tilemap.to_local(Body.global_position))
 
@@ -57,76 +55,76 @@ func _update_path():
 	var to_dir_vec = Vector2(dir_to_vec(to_direction))
 	var to_dt = Tilemap.to_global(to_dir_vec)*grid_size/2
 	var to = to_local(grid_pos_vec + to_dt)
-	print(grid_pos, " from ", from_direction, " to ", to_direction, " ", grid_pos_vec, from, to)
-	Path.curve.set_point_position(0, from)
-	Path.curve.set_point_out(0, from_dir_vec*grid_size/2)
-	Path.curve.set_point_in(0, to_dir_vec*grid_size/2)
-	Path.curve.set_point_position(1, to)
-	_update_curve()
-
-func _get_current_curve_position(t : float):
-	var N = curve.size()
-	var i = int(floor(N*t))
-	return curve[i]
-
-func _calculate_curve_length():
-	var length = 0
-	for i in range(curve.size() - 1):
-		length += curve[i].distance_to(curve[i+1])
-	return length
-
-func _get_curve_angle_at(t):
-	var tf = t + 0.005
-	if tf > 1:
-		tf = t
-		t -= 0.005
-	var p1 = _get_current_curve_position(t)
-	var p2 = _get_current_curve_position(tf)
-	return (p2 - p1).angle()
-
-func _update_curve():
-	curve = Path.curve.tessellate_even_length(CURVE_TESSELATE_STAGES, 0.05)
-	curve_length = _calculate_curve_length()
 	
-func _draw():
-	var px1 = curve[0]
-	for i in range(curve.size() - 1):
-		var px2 = curve[i+1]
-		draw_line(px1, px2, Color.GRAY, 3.0)
-		px1 = px2
+	curve.set_point_position(0, from)
+	curve.set_point_out(0, from_dir_vec*grid_size/1.5)
+	curve.set_point_in(0, to_dir_vec*grid_size/1.5)
+	curve.set_point_position(1, to)
+	
+	print("from ", from_direction, " - ", from, " to ", to_direction, " - ", to)
+
+func _is_new_direction_valid(dir):
+	var pos = grid_pos + dir_to_vec(dir)
+	var data : TileData = Tilemap.get_cell_tile_data(0, pos)
+	var is_solid = false
+	if data:
+		is_solid = data.get_custom_data("solid")
+	return not(is_solid)
+
+func _update_direction():
+	from_direction = to_direction
+	if _is_new_direction_valid(new_direction):
+		to_direction = new_direction
+	else:
+		to_direction = directions.NONE
+	if to_direction == directions.NONE and from_direction == directions.NONE:
+		stopped = true
+	else:
+		stopped = false
+		_update_path()
 
 func _ready():
 	Body.position = position
 	position = Vector2.ZERO
 	grid_size = Vector2(Tilemap.tile_set.tile_size)
 	grid_pos = get_body_map_position_in_tilemap()
+	curve = Path.curve
 	_update_path()
 
 func _process(delta):
-	queue_redraw()
-	if to_direction == directions.NONE:
-		return
-	var t_speed = curve_length/movement_speed
-	t += delta/t_speed
+	if stopped:
+		t = 0
+		if new_direction != directions.NONE:
+			_update_direction()
+	else:
+		t += movement_speed*delta
 	
-	while t >= 1:
-		t -= 1
+	while t >= curve.get_baked_length() and not stopped:
+		print("FINISHED ", t)
+		t -= curve.get_baked_length()
 		grid_pos += dir_to_vec(to_direction)
-		from_direction = to_direction
-		to_direction = get_new_direction()
-		_update_path()
-	var pos1 = Body.position
-	Body.position = _get_current_curve_position(t)
-	var pos2 = Body.position
-	print((pos2 - pos1).length())
-	Body.rotation = _get_curve_angle_at(t)
+		_update_direction()
+	
+	if not stopped:
+		var transf = curve.sample_baked_with_rotation(t)
+		Body.position = transf.get_origin()
+		Body.rotation = transf.get_rotation() + PI/2
 
 func _input(event):
-	if event.is_action_pressed("ui_up") and to_direction != directions.DOWN:
-		new_direction = directions.UP
-	elif event.is_action_pressed("ui_right") and to_direction != directions.LEFT:
-		new_direction = directions.RIGHT
-	elif event.is_action_pressed("ui_down") and to_direction != directions.UP:
-		new_direction = directions.DOWN
-	elif event.is_action_pressed("ui_left") and to_direction != directions.RIGHT:
-		new_direction = directions.LEFT
+	var dir
+	if event.is_action_pressed("ui_up") and from_direction != directions.DOWN:
+		dir = directions.UP
+	elif event.is_action_pressed("ui_right") and from_direction != directions.LEFT:
+		dir = directions.RIGHT
+	elif event.is_action_pressed("ui_down") and from_direction != directions.UP:
+		dir = directions.DOWN
+	elif event.is_action_pressed("ui_left") and from_direction != directions.RIGHT:
+		dir = directions.LEFT
+	
+	if dir:
+		print(dir, " - ", _is_new_direction_valid(dir))
+		if _is_new_direction_valid(dir):
+			new_direction = dir
+			if t/curve.get_baked_length() < 0.6 and not stopped:
+				to_direction = dir
+				_update_path()
