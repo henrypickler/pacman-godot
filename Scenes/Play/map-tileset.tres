@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://djo3pkk8gbd2q" path="res://Images/map-tileset.png" id="1_2mxic"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwvuo"]
+resource_name = "0"
 texture = ExtResource("1_2mxic")
 0:0/next_alternative_id = 4
 0:0/0 = 0

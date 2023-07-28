@@ -2,25 +2,34 @@
 
 [ext_resource type="Texture2D" uid="uid://cndlsrrfkrw8j" path="res://Images/pacman-sheet.png" id="1_4yguj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5d08d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p8u6"]
 atlas = ExtResource("1_4yguj")
-region = Rect2(1, 1, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5jg13"]
-atlas = ExtResource("1_4yguj")
-region = Rect2(19, 1, 16, 16)
+region = Rect2(55, 1, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_km3sc"]
 atlas = ExtResource("1_4yguj")
 region = Rect2(37, 1, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6p8u6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jg13"]
 atlas = ExtResource("1_4yguj")
-region = Rect2(55, 1, 16, 16)
+region = Rect2(19, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d08d"]
+atlas = ExtResource("1_4yguj")
+region = Rect2(1, 1, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p8u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km3sc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jg13")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5d08d")
 }, {
@@ -29,9 +38,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_km3sc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6p8u6")
 }],
 "loop": true,
 "name": &"default",
