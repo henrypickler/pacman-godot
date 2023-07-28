@@ -1,11 +1,10 @@
+class_name MoverBase
 extends Node2D
 
 @export var Tilemap : TileMap
 @onready var Body = $Body
-@onready var Path = $Path2D
-
-var t = 0
 @export var movement_speed = 36
+@export var rotate_with_curve = true
 
 enum directions {
 	NONE,
@@ -14,17 +13,20 @@ enum directions {
 	LEFT,
 	RIGHT
 }
+
+var t = 0
 var from_direction = directions.NONE
-var to_direction = directions.NONE
-var new_direction = directions.NONE
+var to_direction = directions.NONE : set = _set_to_direction
+var stopped : bool : get = _is_stopped
 
 var grid_pos : Vector2i
 var grid_size : Vector2
 
-const CURVE_TESSELATE_STAGES = 10
 var curve : Curve2D
 var curve_length : float
-var stopped : bool
+const CURVE_TESSELATE_STAGES = 10
+
+signal reached_end_of_path
 
 func dir_to_vec(dir) -> Vector2i:
 	match dir:
@@ -71,31 +73,46 @@ func _is_new_direction_valid(dir):
 		is_solid = data.get_custom_data("solid")
 	return not(is_solid)
 
-func _update_direction():
-	from_direction = to_direction
-	if _is_new_direction_valid(new_direction):
-		to_direction = new_direction
+func _set_to_direction(new_direction):
+	to_direction = new_direction
+	_update_path()
+
+func _is_stopped():
+	if to_direction == directions.NONE and from_direction == directions.NONE:
+		return true
+	else:
+		return false
+
+func set_new_direction():
+	if _is_new_direction_valid(to_direction):
+		to_direction = to_direction
 	else:
 		to_direction = directions.NONE
-	if to_direction == directions.NONE and from_direction == directions.NONE:
-		stopped = true
-	else:
-		stopped = false
+
+func _end_of_path():
+	print("END OF PATH")
+	from_direction = to_direction
+	emit_signal("reached_end_of_path")
+	set_new_direction()
+	if not stopped:
 		_update_path()
+
+func _create_curve():
+	curve = Curve2D.new()
+	curve.add_point(Vector2(0, 0))
+	curve.add_point(Vector2(0, 0))
 
 func _ready():
 	Body.position = position
 	position = Vector2.ZERO
 	grid_size = Vector2(Tilemap.tile_set.tile_size)
 	grid_pos = get_body_map_position_in_tilemap()
-	curve = Path.curve
+	_create_curve()
 	_update_path()
 
 func _process(delta):
 	if stopped:
 		t = 0
-		if new_direction != directions.NONE:
-			_update_direction()
 	else:
 		t += movement_speed*delta
 	
@@ -103,28 +120,10 @@ func _process(delta):
 		print("FINISHED ", t)
 		t -= curve.get_baked_length()
 		grid_pos += dir_to_vec(to_direction)
-		_update_direction()
+		_end_of_path()
 	
 	if not stopped:
 		var transf = curve.sample_baked_with_rotation(t)
 		Body.position = transf.get_origin()
-		Body.rotation = transf.get_rotation() + PI/2
-
-func _input(event):
-	var dir
-	if event.is_action_pressed("ui_up") and from_direction != directions.DOWN:
-		dir = directions.UP
-	elif event.is_action_pressed("ui_right") and from_direction != directions.LEFT:
-		dir = directions.RIGHT
-	elif event.is_action_pressed("ui_down") and from_direction != directions.UP:
-		dir = directions.DOWN
-	elif event.is_action_pressed("ui_left") and from_direction != directions.RIGHT:
-		dir = directions.LEFT
-	
-	if dir:
-		print(dir, " - ", _is_new_direction_valid(dir))
-		if _is_new_direction_valid(dir):
-			new_direction = dir
-			if t/curve.get_baked_length() < 0.6 and not stopped:
-				to_direction = dir
-				_update_path()
+		if rotate_with_curve:
+			Body.rotation = transf.get_rotation() + PI/2

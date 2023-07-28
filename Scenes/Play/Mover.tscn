@@ -1,20 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dic6ilubc773w"]
+[gd_scene load_steps=3 format=3 uid="uid://dic6ilubc773w"]
 
 [ext_resource type="SpriteFrames" uid="uid://mldvxafmmcm6" path="res://Scenes/Play/pacman-anim.tres" id="1_0sv38"]
 [ext_resource type="Script" path="res://Scenes/Play/Mover.gd" id="1_ytby8"]
 
-[sub_resource type="Curve2D" id="Curve2D_jopu0"]
-bake_interval = 0.5
-_data = {
-"points": PackedVector2Array(-30.0259, 0.561231, 0, 0, -156, -69, 0, 0, -0.406823, 30.0048, -117, -27)
-}
-point_count = 2
-
 [node name="Mover" type="Node2D"]
 script = ExtResource("1_ytby8")
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_jopu0")
 
 [node name="Body" type="Node2D" parent="."]
 

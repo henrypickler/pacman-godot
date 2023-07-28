@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cylq0s588pioq"]
+
+[ext_resource type="Script" path="res://Scenes/Play/Player.gd" id="1_84k4w"]
+[ext_resource type="SpriteFrames" uid="uid://mldvxafmmcm6" path="res://Scenes/Play/pacman-anim.tres" id="2_8re4b"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_84k4w")
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
+sprite_frames = ExtResource("2_8re4b")
+autoplay = "default"
