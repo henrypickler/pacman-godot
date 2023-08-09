@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://brcgttgiy6eq"]
+
+[ext_resource type="Texture2D" uid="uid://o2qcotpk30u0" path="res://Images/food.png" id="1_cyccw"]
+[ext_resource type="Script" path="res://Scenes/Play/Food.gd" id="1_icqep"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j8h2o"]
+radius = 4.0
+
+[node name="Food" type="Area2D"]
+script = ExtResource("1_icqep")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cyccw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j8h2o")
+one_way_collision_margin = 2.0

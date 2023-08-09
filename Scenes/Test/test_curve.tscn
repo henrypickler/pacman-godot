@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhlqvv5ygsotl"]
+
+[ext_resource type="PackedScene" uid="uid://bqx8oli2alvcf" path="res://Scenes/Play/main.tscn" id="1_ibit0"]
+
+[sub_resource type="GDScript" id="GDScript_bhhe0"]
+script/source = "extends Node2D
+
+@onready var Mover = $Main/Player
+
+func _ready():
+	Mover.connect(\"reached_end_of_path\", queue_redraw)
+
+
+func _draw():
+	var N = 20
+	var points = []
+	var len = Mover.curve.get_baked_length()
+	for i in range(N):
+		points.append(Mover.curve.sample_baked(len*i/N))
+	
+	for i in range(N-1):
+		draw_line(points[i], points[i+1], Color.WHITE, 2)
+"
+
+[node name="test_curve" type="Node2D"]
+z_index = 1
+z_as_relative = false
+script = SubResource("GDScript_bhhe0")
+
+[node name="Main" parent="." instance=ExtResource("1_ibit0")]
+z_as_relative = false

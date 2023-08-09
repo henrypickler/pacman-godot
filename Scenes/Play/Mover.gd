@@ -28,6 +28,19 @@ const CURVE_TESSELATE_STAGES = 10
 
 signal reached_end_of_path
 
+func opposite_dir(dir):
+	match dir:
+		directions.NONE:
+			return directions.NONE
+		directions.UP:
+			return directions.DOWN
+		directions.DOWN:
+			return directions.UP
+		directions.LEFT:
+			return directions.RIGHT
+		directions.RIGHT:
+			return directions.LEFT
+
 func dir_to_vec(dir) -> Vector2i:
 	match dir:
 		directions.NONE:
@@ -98,6 +111,7 @@ func _create_curve():
 	curve = Curve2D.new()
 	curve.add_point(Vector2(0, 0))
 	curve.add_point(Vector2(0, 0))
+	curve.bake_interval = 0.3
 
 func _ready():
 	Body.position = position
@@ -123,3 +137,13 @@ func _process(delta):
 		Body.position = transf.get_origin()
 		if rotate_with_curve:
 			Body.rotation = transf.get_rotation() + PI/2
+			#var len = curve.get_baked_length()
+			#var dt = 0.1
+			#var t1 = t
+			#var t2 = t + dt
+			#if t2 > curve.get_baked_length():
+			#	t2 = t1
+			#	t1 = t - dt
+			#var pt1 = curve.sample(0, t1/len)
+			#var pt2 = curve.sample(0, t2/len)
+			#Body.rotation = (pt1 - pt2).angle()

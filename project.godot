@@ -21,11 +21,6 @@ window/size/viewport_height=1050
 window/stretch/mode="viewport"
 window/stretch/scale=3.0
 
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
 [importer_defaults]
 
 texture={
@@ -48,7 +43,12 @@ texture={
 "roughness/src_normal": ""
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
