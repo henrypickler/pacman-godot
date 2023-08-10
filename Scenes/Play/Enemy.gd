@@ -1,9 +1,10 @@
 extends MoverBase
 
+@onready var EyesOffset = $Body/Eyes/Offset
+
 func _ready():
 	super._ready()
 	_end_of_path()
-	
 
 func _get_available_directions():
 	var valid_dirs = []
@@ -21,3 +22,7 @@ func set_new_direction():
 		return 
 	var new_dir_idx = randi_range(0, len(valid_dirs)-1)
 	to_direction = valid_dirs[new_dir_idx]
+
+func _process(delta):
+	super._process(delta)
+	EyesOffset.position = velocity.normalized()

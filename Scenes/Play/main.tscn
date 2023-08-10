@@ -34,13 +34,3 @@ offset_bottom = 23.0
 position = Vector2(153, 165)
 Tilemap = NodePath("../TileMap")
 movement_speed = 28
-
-[node name="test_enemy2" parent="." node_paths=PackedStringArray("Tilemap") instance=ExtResource("5_nta0c")]
-position = Vector2(153, 165)
-Tilemap = NodePath("../TileMap")
-movement_speed = 28
-
-[node name="test_enemy3" parent="." node_paths=PackedStringArray("Tilemap") instance=ExtResource("5_nta0c")]
-position = Vector2(153, 165)
-Tilemap = NodePath("../TileMap")
-movement_speed = 28

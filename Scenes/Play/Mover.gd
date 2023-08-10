@@ -15,6 +15,7 @@ enum directions {
 }
 
 var t = 0
+var velocity = Vector2(0 ,0)
 var from_direction = directions.NONE
 var to_direction = directions.NONE : set = _set_to_direction
 var stopped : bool : get = _is_stopped
@@ -95,10 +96,7 @@ func _is_stopped():
 		return false
 
 func set_new_direction():
-	if _is_new_direction_valid(to_direction):
-		to_direction = to_direction
-	else:
-		to_direction = directions.NONE
+	pass
 
 func _end_of_path():
 	from_direction = to_direction
@@ -134,16 +132,7 @@ func _process(delta):
 	
 	if not stopped:
 		var transf = curve.sample_baked_with_rotation(t)
+		velocity = transf.get_origin() - Body.position
 		Body.position = transf.get_origin()
 		if rotate_with_curve:
 			Body.rotation = transf.get_rotation() + PI/2
-			#var len = curve.get_baked_length()
-			#var dt = 0.1
-			#var t1 = t
-			#var t2 = t + dt
-			#if t2 > curve.get_baked_length():
-			#	t2 = t1
-			#	t1 = t - dt
-			#var pt1 = curve.sample(0, t1/len)
-			#var pt2 = curve.sample(0, t2/len)
-			#Body.rotation = (pt1 - pt2).angle()

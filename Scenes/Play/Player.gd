@@ -1,7 +1,11 @@
-class_name Player
+class_name Enemy
 extends MoverBase
 
 var next_direction = directions.NONE
+
+func _ready():
+	super._ready()
+	_end_of_path()
 
 func set_new_direction():
 	print("Next dir ", next_direction)
