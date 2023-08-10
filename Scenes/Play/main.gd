@@ -8,3 +8,6 @@ func collision_with_food(_body):
 func _set_points(new_points):
 	points = new_points
 	$Label.text = str(new_points)
+
+func player_collided():
+	points -= 500

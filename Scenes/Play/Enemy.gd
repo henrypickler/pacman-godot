@@ -2,6 +2,8 @@ extends MoverBase
 
 @onready var EyesOffset = $Body/Eyes/Offset
 
+signal player_collided
+
 func _ready():
 	super._ready()
 	_end_of_path()
@@ -26,3 +28,7 @@ func set_new_direction():
 func _process(delta):
 	super._process(delta)
 	EyesOffset.position = velocity.normalized()
+
+
+func player_collision(_body):
+	emit_signal("player_collided")

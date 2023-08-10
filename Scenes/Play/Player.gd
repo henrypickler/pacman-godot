@@ -8,7 +8,6 @@ func _ready():
 	_end_of_path()
 
 func set_new_direction():
-	print("Next dir ", next_direction)
 	if _is_new_direction_valid(next_direction):
 		to_direction = next_direction
 	elif _is_new_direction_valid(to_direction):
@@ -28,7 +27,6 @@ func _input(event):
 		dir = directions.LEFT
 	
 	if dir:
-		print(dir, " - ", _is_new_direction_valid(dir), " stopped ", stopped)
 		next_direction = dir
 		if _is_new_direction_valid(dir):
 			if stopped:
@@ -36,3 +34,5 @@ func _input(event):
 			else:
 				if t/curve.get_baked_length() < 0.35:
 					to_direction = next_direction
+
+

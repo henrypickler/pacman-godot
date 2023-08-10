@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/Play/main.gd" id="1_xcuqb"]
 [ext_resource type="PackedScene" uid="uid://cylq0s588pioq" path="res://Scenes/Play/Player.tscn" id="2_5vp43"]
 [ext_resource type="Script" path="res://Scenes/Play/FoodSpawner.gd" id="3_es1ob"]
-[ext_resource type="PackedScene" uid="uid://d0vxhk8fotspg" path="res://Scenes/Test/test_enemy.tscn" id="5_nta0c"]
+[ext_resource type="PackedScene" uid="uid://bthjdvor1hlkh" path="res://Scenes/Play/Enemy.tscn" id="5_nal60"]
 
 [node name="Main" type="Node2D"]
 texture_filter = 1
@@ -30,7 +30,10 @@ Tilemap = NodePath("../TileMap")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="test_enemy" parent="." node_paths=PackedStringArray("Tilemap") instance=ExtResource("5_nta0c")]
-position = Vector2(153, 165)
+[node name="Ghost" parent="." node_paths=PackedStringArray("Tilemap") instance=ExtResource("5_nal60")]
+position = Vector2(153, 167)
 Tilemap = NodePath("../TileMap")
-movement_speed = 28
+movement_speed = 16
+rotate_with_curve = false
+
+[connection signal="player_collided" from="Ghost" to="." method="player_collided"]
