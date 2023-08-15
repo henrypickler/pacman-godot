@@ -1,10 +1,13 @@
 extends MoverBase
 
 @onready var EyesOffset = $Body/Eyes/Offset
+@export var player : Player
+@export var chase_temperature = -1.2
 
 signal player_collided
 
 func _ready():
+	position += Vector2(randf(), randf())*16
 	super._ready()
 	_end_of_path()
 
@@ -17,13 +20,60 @@ func _get_available_directions():
 			valid_dirs.append(dir)
 	return valid_dirs
 
+func _random_new_dir(valid_dirs):
+	var new_dir_idx = randi_range(0, len(valid_dirs)-1)
+	return valid_dirs[new_dir_idx]
+
+func _apply_exp_temp(vec, temp):
+	var new_vec = []
+	for i in range(len(vec)):
+		new_vec.append(exp(vec[i]/temp))
+	return new_vec
+	
+
+func _sum(vec):
+	var sum = 0
+	for i in range(len(vec)):
+		sum += vec[i]
+	return sum
+
+func _softmax(vec, temp):
+	vec = _apply_exp_temp(vec, temp)
+	var sum = _sum(vec)
+	for i in range(len(vec)):
+		vec[i] = vec[i]/sum
+	return vec
+
+func _player_dist_at_pos(pos):
+	return Tilemap.get_distance_between_points(pos, player.grid_pos)
+
+
+func _new_dir_weighed_by_distance(valid_dirs):
+	var dists = []
+	var total_dist = 0
+	for dir in valid_dirs:
+		var pos = get_grid_position_at_dir(dir)
+		var dist = _player_dist_at_pos(pos)
+		dists.append(dist)
+	var softmax_dists = _softmax(dists, chase_temperature)
+	print(dists, softmax_dists)
+	#print(dists)
+	
+	var selected_weight = randf()
+	for i in range(len(valid_dirs)):
+		selected_weight -= softmax_dists[i]
+		if selected_weight <= 0:
+			return valid_dirs[i]
+	return _random_new_dir(valid_dirs)
+	
+
 func set_new_direction():
 	var valid_dirs = _get_available_directions()
 	if len(valid_dirs) == 0:
 		to_direction = opposite_dir(to_direction)
 		return 
-	var new_dir_idx = randi_range(0, len(valid_dirs)-1)
-	to_direction = valid_dirs[new_dir_idx]
+	to_direction = _new_dir_weighed_by_distance(valid_dirs)
+	
 
 func _process(delta):
 	super._process(delta)

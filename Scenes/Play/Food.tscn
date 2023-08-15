@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/Play/Food.gd" id="1_icqep"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8h2o"]
-radius = 4.0
+radius = 2.0
 
 [node name="Food" type="Area2D"]
 script = ExtResource("1_icqep")

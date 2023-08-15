@@ -77,8 +77,12 @@ func _update_path():
 	curve.set_point_in(0, to_dir_vec*grid_size/1.5)
 	curve.set_point_position(1, to)
 
+
+func get_grid_position_at_dir(dir):
+	return grid_pos + dir_to_vec(dir)
+
 func _is_new_direction_valid(dir):
-	var pos = grid_pos + dir_to_vec(dir)
+	var pos = get_grid_position_at_dir(dir)
 	var data : TileData = Tilemap.get_cell_tile_data(0, pos)
 	var is_solid = false
 	if data:

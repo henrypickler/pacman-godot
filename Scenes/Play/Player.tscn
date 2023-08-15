@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://mldvxafmmcm6" path="res://Scenes/Play/pacman-anim.tres" id="2_8re4b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6vooi"]
-radius = 5.0
+radius = 4.0
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_84k4w")
@@ -18,4 +18,5 @@ sprite_frames = ExtResource("2_8re4b")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+position = Vector2(4, 0)
 shape = SubResource("CircleShape2D_6vooi")

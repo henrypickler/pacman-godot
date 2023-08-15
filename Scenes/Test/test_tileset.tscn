@@ -12,6 +12,10 @@ script/source = "extends Node2D
 var should_draw = false
 var neighbor_directions
 
+var point_select = true
+var point1 = Vector2(0, 0)
+#var point2 = Vector2(10, 10)
+
 func _ready():
 	var Tileset : TileSet = Tilemap.tile_set
 	neighbor_directions = [
@@ -38,9 +42,6 @@ func get_neighbor_cells(cell_pos : Vector2i):
 	return cells
 
 func _draw():
-	if not should_draw:
-		should_draw = true
-		return
 	var mouse_position = get_global_mouse_position()
 	
 	var mouse_position_map = Tilemap.local_to_map(mouse_position)#Tilemap.get_local_mouse_position()
@@ -51,7 +52,34 @@ func _draw():
 		var dir = Vector2(cell_pos - mouse_position_map)
 		var color = Color.DARK_RED if is_solid else Color.DARK_GREEN
 		draw_line(mouse_position, mouse_position + dir.normalized()*40, color, 20)
+	
+	
+	var rect = Tilemap.get_used_rect()
+	for x in range(rect.position.x, rect.end.x):
+		for y in range(rect.position.y, rect.end.y):
+			var point = Tilemap.astar.get_closest_point(Vector2(x, y))
+			var conn = Tilemap.astar.get_point_connections(point)
+			if len(conn) < 1:
+				continue
+			for p in conn:
+				var p2 = Tilemap.astar.get_point_position(p)
+				draw_line(Vector2(x, y)*16 + Vector2.ONE*8, p2*16 + Vector2.ONE*8, Color.PURPLE)
+	
+	
+	var point2 = get_viewport().get_mouse_position()/16
+	var p1_id = Tilemap.astar.get_closest_point(point1)
+	var p2_id = Tilemap.astar.get_closest_point(point2)
+	var path_list = Tilemap.astar.get_point_path(p1_id, p2_id)
+	for i in len(path_list)-1:
+		draw_line(path_list[i]*16, path_list[i+1]*16, Color.GREEN)
+	
+	print(Tilemap.get_distance_between_points(point1, point2))
+
+func _input(event):
+	if event is InputEventMouseButton:
+		point1 = event.position/16
 		
+		point_select = not point_select
 "
 
 [node name="test_tileset" type="Node2D"]

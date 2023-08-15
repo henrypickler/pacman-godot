@@ -1,4 +1,4 @@
-class_name Enemy
+class_name Player
 extends MoverBase
 
 var next_direction = directions.NONE
