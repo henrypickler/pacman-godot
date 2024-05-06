@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvfi7ooxaep17"]
+
+[ext_resource type="Script" path="res://Scenes/Transitions/simple.gd" id="1_4no4e"]
+
+[node name="SimpleTransition" type="Control"]
+z_index = 1000
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+rotation = 0.755728
+script = ExtResource("1_4no4e")

@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://efk15g01culb"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/SelectPlayer/PlayerCard.gd" id="1_pg35o"]
+[ext_resource type="Texture2D" uid="uid://6v8ibxf4eixh" path="res://Images/pacman.png" id="1_vv0ro"]
+
+[node name="PlayerCard" type="VBoxContainer"]
+custom_minimum_size = Vector2(244, 340)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -656.0
+offset_bottom = -710.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pg35o")
+
+[node name="Active" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(244, 340)
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="Active"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Active/PanelContainer3"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Active/PanelContainer3/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Active"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Active/PanelContainer"]
+layout_mode = 2
+
+[node name="Spacer1" type="Control" parent="Active/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="PlayerImage" type="TextureRect" parent="Active/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_vv0ro")
+stretch_mode = 5
+
+[node name="Spacer2" type="Control" parent="Active/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Active"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Active/VBoxContainer"]
+layout_mode = 2
+
+[node name="PreviousColor" type="Button" parent="Active/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = " < "
+
+[node name="ColorLabel" type="Label" parent="Active/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Color"
+horizontal_alignment = 1
+
+[node name="NextColor" type="Button" parent="Active/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = " > "
+
+[node name="Ready" type="Button" parent="Active/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Ready"
+
+[node name="Inactive" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(244, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Inactive"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Press any button
+to enter"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Active/VBoxContainer/HBoxContainer/PreviousColor" to="." method="_on_previous_color_pressed"]
+[connection signal="pressed" from="Active/VBoxContainer/HBoxContainer/NextColor" to="." method="_on_next_color_pressed"]
+[connection signal="pressed" from="Active/VBoxContainer/Ready" to="." method="_on_ready_pressed"]

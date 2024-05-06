@@ -1,15 +1,18 @@
+class_name Ghost
 extends MoverBase
 
 @onready var EyesOffset = $Body/Eyes/Offset
-@export var player : Player
 @export var chase_temperature = -1.2
 
-signal player_collided
+signal player_collided(player : Player)
+
+var wait_start = true
 
 func _ready():
-	position += Vector2(randf(), randf())*16
 	super._ready()
 	_end_of_path()
+	$CPUParticles2D.emitting=true
+	connect("player_collided", GameManagerAutoload.player_collided)
 
 func _get_available_directions():
 	var valid_dirs = []
@@ -45,19 +48,19 @@ func _softmax(vec, temp):
 	return vec
 
 func _player_dist_at_pos(pos):
-	return Tilemap.get_distance_between_points(pos, player.grid_pos)
+	var min_distance = INF
+	for player in GameManagerAutoload.players:
+		min_distance = min(Tilemap.get_distance_between_points(pos, player.grid_pos), min_distance)
+	return min_distance
 
 
 func _new_dir_weighed_by_distance(valid_dirs):
 	var dists = []
-	var total_dist = 0
 	for dir in valid_dirs:
 		var pos = get_grid_position_at_dir(dir)
 		var dist = _player_dist_at_pos(pos)
 		dists.append(dist)
 	var softmax_dists = _softmax(dists, chase_temperature)
-	print(dists, softmax_dists)
-	#print(dists)
 	
 	var selected_weight = randf()
 	for i in range(len(valid_dirs)):
@@ -73,12 +76,18 @@ func set_new_direction():
 		to_direction = opposite_dir(to_direction)
 		return 
 	to_direction = _new_dir_weighed_by_distance(valid_dirs)
-	
 
 func _process(delta):
+	if wait_start:
+		return
 	super._process(delta)
 	EyesOffset.position = velocity.normalized()
 
 
-func player_collision(_body):
-	emit_signal("player_collided")
+func player_collision(body):
+	emit_signal("player_collided", body.get_parent())
+
+
+func _on_timer_timeout():
+	$Body.visible = true
+	wait_start = false

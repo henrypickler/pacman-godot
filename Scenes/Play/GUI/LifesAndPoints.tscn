@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dag0olsanp6pm"]
+
+[ext_resource type="Script" path="res://Scenes/Play/GUI/LifesAndPoints.gd" id="1_p32ou"]
+[ext_resource type="Texture2D" uid="uid://b5t5lw1rjrcah" path="res://Images/life_heart_empty.png" id="2_jfytf"]
+[ext_resource type="Texture2D" uid="uid://b8f387hfnleq7" path="res://Images/life_heart.png" id="3_gh21q"]
+
+[node name="LifesAndPoints" type="HBoxContainer"]
+offset_right = 103.0
+offset_bottom = 15.0
+script = ExtResource("1_p32ou")
+empty_life_texture = ExtResource("2_jfytf")
+full_life_texture = ExtResource("3_gh21q")
+
+[node name="Lifes" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_right = 32
+
+[node name="PointsText" type="Label" parent="."]
+layout_mode = 2
+text = "Points:"
+
+[node name="Points" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_right = 32
+
+[node name="LevelText" type="Label" parent="."]
+layout_mode = 2
+text = "Level:"
+
+[node name="Level" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"

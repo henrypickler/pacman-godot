@@ -1,0 +1,200 @@
+[gd_scene load_steps=21 format=3 uid="uid://cylq0s588pioq"]
+
+[ext_resource type="Script" path="res://Scenes/Play/Player/Player.gd" id="1_vl75v"]
+[ext_resource type="SpriteFrames" uid="uid://mldvxafmmcm6" path="res://Scenes/Play/pacman-anim.tres" id="2_ew67e"]
+[ext_resource type="Texture2D" uid="uid://dbdynwyylae8p" path="res://Images/ghost_eyes_back.png" id="3_2bdby"]
+[ext_resource type="Texture2D" uid="uid://biqk34l0p6qeg" path="res://Images/stun-effect-sheet.png" id="3_nrj1d"]
+[ext_resource type="Texture2D" uid="uid://ccvd7dn2vhjvu" path="res://Images/ghost_eyes.png" id="4_508lq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6vooi"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4f88"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_hvwla"]
+resource_name = "damage"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(2.82843, 3.60501),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.384314, 0.384314, 0.384314, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jptgs"]
+resource_name = "none"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wgncw"]
+_data = {
+"damage": SubResource("Animation_hvwla"),
+"none": SubResource("Animation_jptgs")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob12b"]
+atlas = ExtResource("3_nrj1d")
+region = Rect2(60, 0, 12, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkifv"]
+atlas = ExtResource("3_nrj1d")
+region = Rect2(72, 0, 12, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8cjw"]
+atlas = ExtResource("3_nrj1d")
+region = Rect2(84, 0, 12, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdf5k"]
+atlas = ExtResource("3_nrj1d")
+region = Rect2(96, 0, 12, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aguvv"]
+atlas = ExtResource("3_nrj1d")
+region = Rect2(0, 0, 12, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j82ge"]
+atlas = ExtResource("3_nrj1d")
+region = Rect2(12, 0, 12, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pg4q"]
+atlas = ExtResource("3_nrj1d")
+region = Rect2(24, 0, 12, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7g00"]
+atlas = ExtResource("3_nrj1d")
+region = Rect2(36, 0, 12, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvk21"]
+atlas = ExtResource("3_nrj1d")
+region = Rect2(48, 0, 12, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yk6k5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob12b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkifv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8cjw")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_qdf5k")
+}],
+"loop": true,
+"name": &"repeat",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aguvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j82ge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pg4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7g00")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_cvk21")
+}],
+"loop": false,
+"name": &"start",
+"speed": 20.0
+}]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_vl75v")
+movement_speed = 52
+
+[node name="Body" type="CharacterBody2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 3
+collision_mask = 3
+
+[node name="PlayerImage" type="AnimatedSprite2D" parent="Body"]
+unique_name_in_owner = true
+sprite_frames = ExtResource("2_ew67e")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+visible = false
+position = Vector2(4, 0)
+shape = SubResource("CircleShape2D_6vooi")
+
+[node name="Eyes" type="Node2D" parent="Body"]
+visible = false
+position = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Body/Eyes"]
+position = Vector2(3, -2)
+texture = ExtResource("3_2bdby")
+
+[node name="Eyeballs" type="Node2D" parent="Body/Eyes"]
+unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Body/Eyes/Eyeballs"]
+position = Vector2(3, -2)
+texture = ExtResource("4_508lq")
+
+[node name="Area2D" type="Area2D" parent="Body"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Body/Area2D"]
+visible = false
+shape = SubResource("CircleShape2D_e4f88")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Body"]
+remote_path = NodePath("../../Node2D")
+update_rotation = false
+update_scale = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wgncw")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="StunTimer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="StunAnimation" type="AnimatedSprite2D" parent="Node2D"]
+visible = false
+position = Vector2(1, -4)
+sprite_frames = SubResource("SpriteFrames_yk6k5")
+animation = &"start"
+autoplay = "start"
+
+[connection signal="area_entered" from="Body/Area2D" to="." method="_player_bump"]
+[connection signal="timeout" from="Timer" to="." method="end_invincibility"]
+[connection signal="timeout" from="StunTimer" to="." method="end_stun"]
+[connection signal="animation_finished" from="Node2D/StunAnimation" to="Node2D/StunAnimation" method="play" binds= [&"repeat"]]

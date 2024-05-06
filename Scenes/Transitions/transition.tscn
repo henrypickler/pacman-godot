@@ -1,0 +1,1674 @@
+[gd_scene load_steps=3 format=3 uid="uid://cug6b87l7h3ge"]
+
+[ext_resource type="PackedScene" uid="uid://dikpm7jnc5yqr" path="res://Scenes/Play/Player/PlayerBody.tscn" id="1_jfqww"]
+[ext_resource type="PackedScene" uid="uid://brcgttgiy6eq" path="res://Scenes/Play/Food.tscn" id="2_06vts"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(208, 160)
+
+[node name="Body3" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, 0)
+
+[node name="Body4" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, -32)
+
+[node name="Body5" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, -64)
+
+[node name="Body6" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, -96)
+
+[node name="Body7" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, -128)
+
+[node name="Body13" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, -160)
+
+[node name="Body14" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, 16)
+scale = Vector2(-1, -1)
+
+[node name="Body15" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, -16)
+scale = Vector2(-1, -1)
+
+[node name="Body16" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, -48)
+scale = Vector2(-1, -1)
+
+[node name="Body17" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, -80)
+scale = Vector2(-1, -1)
+
+[node name="Body23" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, -112)
+scale = Vector2(-1, -1)
+
+[node name="Body24" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, -144)
+scale = Vector2(-1, -1)
+
+[node name="Food" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 16)
+
+[node name="Food2" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 16)
+
+[node name="Food3" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 16)
+
+[node name="Food4" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 16)
+
+[node name="Food5" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 16)
+
+[node name="Food6" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 16)
+
+[node name="Food7" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 16)
+
+[node name="Food8" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 16)
+
+[node name="Food9" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 16)
+
+[node name="Food10" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 16)
+
+[node name="Food11" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 16)
+
+[node name="Food12" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 16)
+
+[node name="Food13" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 16)
+
+[node name="Food14" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 16)
+
+[node name="Food15" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 16)
+
+[node name="Food16" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 16)
+
+[node name="Food17" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 16)
+
+[node name="Food18" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 16)
+
+[node name="Food19" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, 16)
+
+[node name="Food20" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 16)
+
+[node name="Food21" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 16)
+
+[node name="Food22" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 16)
+
+[node name="Food23" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, 0)
+
+[node name="Food24" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 0)
+
+[node name="Food25" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 0)
+
+[node name="Food26" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 0)
+
+[node name="Food27" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 0)
+
+[node name="Food28" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 0)
+
+[node name="Food29" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 0)
+
+[node name="Food30" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 0)
+
+[node name="Food31" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 0)
+
+[node name="Food32" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 0)
+
+[node name="Food33" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 0)
+
+[node name="Food34" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 0)
+
+[node name="Food35" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 0)
+
+[node name="Food36" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 0)
+
+[node name="Food37" parent="." instance=ExtResource("2_06vts")]
+
+[node name="Food38" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 0)
+
+[node name="Food39" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 0)
+
+[node name="Food40" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 0)
+
+[node name="Food41" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 0)
+
+[node name="Food42" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 0)
+
+[node name="Food43" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 0)
+
+[node name="Food44" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 0)
+
+[node name="Food45" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, -16)
+
+[node name="Food46" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, -16)
+
+[node name="Food47" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, -16)
+
+[node name="Food48" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, -16)
+
+[node name="Food49" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, -16)
+
+[node name="Food50" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, -16)
+
+[node name="Food51" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, -16)
+
+[node name="Food52" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, -16)
+
+[node name="Food53" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, -16)
+
+[node name="Food54" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, -16)
+
+[node name="Food55" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, -16)
+
+[node name="Food56" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, -16)
+
+[node name="Food57" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, -16)
+
+[node name="Food58" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, -16)
+
+[node name="Food59" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, -16)
+
+[node name="Food60" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, -16)
+
+[node name="Food61" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, -16)
+
+[node name="Food62" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, -16)
+
+[node name="Food63" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, -16)
+
+[node name="Food64" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, -16)
+
+[node name="Food65" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, -16)
+
+[node name="Food66" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, -16)
+
+[node name="Food67" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, -32)
+
+[node name="Food68" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, -32)
+
+[node name="Food69" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, -32)
+
+[node name="Food70" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, -32)
+
+[node name="Food71" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, -32)
+
+[node name="Food72" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, -32)
+
+[node name="Food73" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, -32)
+
+[node name="Food74" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, -32)
+
+[node name="Food75" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, -32)
+
+[node name="Food76" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, -32)
+
+[node name="Food77" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, -32)
+
+[node name="Food78" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, -32)
+
+[node name="Food79" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, -32)
+
+[node name="Food80" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, -32)
+
+[node name="Food81" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, -32)
+
+[node name="Food82" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, -32)
+
+[node name="Food83" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, -32)
+
+[node name="Food84" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, -32)
+
+[node name="Food85" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, -32)
+
+[node name="Food86" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, -32)
+
+[node name="Food87" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, -32)
+
+[node name="Food88" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, -32)
+
+[node name="Food89" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, -48)
+
+[node name="Food90" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, -48)
+
+[node name="Food91" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, -48)
+
+[node name="Food92" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, -48)
+
+[node name="Food93" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, -48)
+
+[node name="Food94" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, -48)
+
+[node name="Food95" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, -48)
+
+[node name="Food96" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, -48)
+
+[node name="Food97" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, -48)
+
+[node name="Food98" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, -48)
+
+[node name="Food99" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, -48)
+
+[node name="Food100" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, -48)
+
+[node name="Food101" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, -48)
+
+[node name="Food102" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, -48)
+
+[node name="Food103" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, -48)
+
+[node name="Food104" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, -48)
+
+[node name="Food105" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, -48)
+
+[node name="Food106" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, -48)
+
+[node name="Food107" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, -48)
+
+[node name="Food108" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, -48)
+
+[node name="Food109" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, -48)
+
+[node name="Food110" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, -48)
+
+[node name="Food111" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, -64)
+
+[node name="Food112" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, -64)
+
+[node name="Food113" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, -64)
+
+[node name="Food114" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, -64)
+
+[node name="Food115" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, -64)
+
+[node name="Food116" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, -64)
+
+[node name="Food117" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, -64)
+
+[node name="Food118" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, -64)
+
+[node name="Food119" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, -64)
+
+[node name="Food120" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, -64)
+
+[node name="Food121" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, -64)
+
+[node name="Food122" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, -64)
+
+[node name="Food123" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, -64)
+
+[node name="Food124" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, -64)
+
+[node name="Food125" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, -64)
+
+[node name="Food126" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, -64)
+
+[node name="Food127" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, -64)
+
+[node name="Food128" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, -64)
+
+[node name="Food129" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, -64)
+
+[node name="Food130" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, -64)
+
+[node name="Food131" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, -64)
+
+[node name="Food132" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, -64)
+
+[node name="Food133" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, -80)
+
+[node name="Food134" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, -80)
+
+[node name="Food135" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, -80)
+
+[node name="Food136" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, -80)
+
+[node name="Food137" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, -80)
+
+[node name="Food138" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, -80)
+
+[node name="Food139" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, -80)
+
+[node name="Food140" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, -80)
+
+[node name="Food141" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, -80)
+
+[node name="Food142" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, -80)
+
+[node name="Food143" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, -80)
+
+[node name="Food144" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, -80)
+
+[node name="Food145" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, -80)
+
+[node name="Food146" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, -80)
+
+[node name="Food147" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, -80)
+
+[node name="Food148" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, -80)
+
+[node name="Food149" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, -80)
+
+[node name="Food150" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, -80)
+
+[node name="Food151" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, -80)
+
+[node name="Food152" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, -80)
+
+[node name="Food153" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, -80)
+
+[node name="Food154" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, -80)
+
+[node name="Food155" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, -96)
+
+[node name="Food156" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, -96)
+
+[node name="Food157" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, -96)
+
+[node name="Food158" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, -96)
+
+[node name="Food159" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, -96)
+
+[node name="Food160" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, -96)
+
+[node name="Food161" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, -96)
+
+[node name="Food162" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, -96)
+
+[node name="Food163" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, -96)
+
+[node name="Food164" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, -96)
+
+[node name="Food165" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, -96)
+
+[node name="Food166" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, -96)
+
+[node name="Food167" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, -96)
+
+[node name="Food168" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, -96)
+
+[node name="Food169" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, -96)
+
+[node name="Food170" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, -96)
+
+[node name="Food171" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, -96)
+
+[node name="Food172" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, -96)
+
+[node name="Food173" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, -96)
+
+[node name="Food174" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, -96)
+
+[node name="Food175" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, -96)
+
+[node name="Food176" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, -96)
+
+[node name="Food177" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, -112)
+
+[node name="Food178" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, -112)
+
+[node name="Food179" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, -112)
+
+[node name="Food180" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, -112)
+
+[node name="Food181" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, -112)
+
+[node name="Food182" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, -112)
+
+[node name="Food183" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, -112)
+
+[node name="Food184" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, -112)
+
+[node name="Food185" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, -112)
+
+[node name="Food186" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, -112)
+
+[node name="Food187" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, -112)
+
+[node name="Food188" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, -112)
+
+[node name="Food189" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, -112)
+
+[node name="Food190" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, -112)
+
+[node name="Food191" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, -112)
+
+[node name="Food192" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, -112)
+
+[node name="Food193" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, -112)
+
+[node name="Food194" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, -112)
+
+[node name="Food195" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, -112)
+
+[node name="Food196" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, -112)
+
+[node name="Food197" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, -112)
+
+[node name="Food198" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, -112)
+
+[node name="Food199" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, -128)
+
+[node name="Food200" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, -128)
+
+[node name="Food201" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, -128)
+
+[node name="Food202" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, -128)
+
+[node name="Food203" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, -128)
+
+[node name="Food204" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, -128)
+
+[node name="Food205" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, -128)
+
+[node name="Food206" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, -128)
+
+[node name="Food207" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, -128)
+
+[node name="Food208" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, -128)
+
+[node name="Food209" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, -128)
+
+[node name="Food210" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, -128)
+
+[node name="Food211" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, -128)
+
+[node name="Food212" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, -128)
+
+[node name="Food213" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, -128)
+
+[node name="Food214" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, -128)
+
+[node name="Food215" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, -128)
+
+[node name="Food216" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, -128)
+
+[node name="Food217" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, -128)
+
+[node name="Food218" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, -128)
+
+[node name="Food219" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, -128)
+
+[node name="Food220" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, -128)
+
+[node name="Food221" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, -144)
+
+[node name="Food222" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, -144)
+
+[node name="Food223" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, -144)
+
+[node name="Food224" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, -144)
+
+[node name="Food225" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, -144)
+
+[node name="Food226" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, -144)
+
+[node name="Food227" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, -144)
+
+[node name="Food228" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, -144)
+
+[node name="Food229" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, -144)
+
+[node name="Food230" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, -144)
+
+[node name="Food231" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, -144)
+
+[node name="Food232" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, -144)
+
+[node name="Food233" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, -144)
+
+[node name="Food234" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, -144)
+
+[node name="Food235" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, -144)
+
+[node name="Food236" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, -144)
+
+[node name="Food237" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, -144)
+
+[node name="Food238" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, -144)
+
+[node name="Food239" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, -144)
+
+[node name="Food240" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, -144)
+
+[node name="Food241" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, -144)
+
+[node name="Food242" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, -144)
+
+[node name="Food243" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, -160)
+
+[node name="Food244" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, -160)
+
+[node name="Food245" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, -160)
+
+[node name="Food246" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, -160)
+
+[node name="Food247" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, -160)
+
+[node name="Food248" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, -160)
+
+[node name="Food249" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, -160)
+
+[node name="Food250" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, -160)
+
+[node name="Food251" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, -160)
+
+[node name="Food252" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, -160)
+
+[node name="Food253" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, -160)
+
+[node name="Food254" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, -160)
+
+[node name="Food255" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, -160)
+
+[node name="Food256" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, -160)
+
+[node name="Food257" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, -160)
+
+[node name="Food258" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, -160)
+
+[node name="Food259" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, -160)
+
+[node name="Food260" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, -160)
+
+[node name="Food261" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, -160)
+
+[node name="Food262" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, -160)
+
+[node name="Food263" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, -160)
+
+[node name="Food264" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, -160)
+
+[node name="Body8" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, 192)
+
+[node name="Body9" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, 160)
+
+[node name="Body10" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, 128)
+
+[node name="Body11" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, 96)
+
+[node name="Body12" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, 64)
+
+[node name="Body18" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(128, 32)
+
+[node name="Body19" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, 208)
+scale = Vector2(-1, -1)
+
+[node name="Body20" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, 176)
+scale = Vector2(-1, -1)
+
+[node name="Body21" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, 144)
+scale = Vector2(-1, -1)
+
+[node name="Body22" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, 112)
+scale = Vector2(-1, -1)
+
+[node name="Body25" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, 80)
+scale = Vector2(-1, -1)
+
+[node name="Body26" parent="." instance=ExtResource("1_jfqww")]
+position = Vector2(-224, 48)
+scale = Vector2(-1, -1)
+
+[node name="Food265" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 208)
+
+[node name="Food266" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 208)
+
+[node name="Food267" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 208)
+
+[node name="Food268" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 208)
+
+[node name="Food269" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 208)
+
+[node name="Food270" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 208)
+
+[node name="Food271" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 208)
+
+[node name="Food272" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 208)
+
+[node name="Food273" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 208)
+
+[node name="Food274" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 208)
+
+[node name="Food275" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 208)
+
+[node name="Food276" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 208)
+
+[node name="Food277" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 208)
+
+[node name="Food278" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 208)
+
+[node name="Food279" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 208)
+
+[node name="Food280" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 208)
+
+[node name="Food281" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 208)
+
+[node name="Food282" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 208)
+
+[node name="Food283" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, 208)
+
+[node name="Food284" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 208)
+
+[node name="Food285" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 208)
+
+[node name="Food286" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 208)
+
+[node name="Food287" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, 192)
+
+[node name="Food288" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 192)
+
+[node name="Food289" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 192)
+
+[node name="Food290" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 192)
+
+[node name="Food291" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 192)
+
+[node name="Food292" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 192)
+
+[node name="Food293" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 192)
+
+[node name="Food294" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 192)
+
+[node name="Food295" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 192)
+
+[node name="Food296" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 192)
+
+[node name="Food297" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 192)
+
+[node name="Food298" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 192)
+
+[node name="Food299" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 192)
+
+[node name="Food300" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 192)
+
+[node name="Food301" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 192)
+
+[node name="Food302" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 192)
+
+[node name="Food303" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 192)
+
+[node name="Food304" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 192)
+
+[node name="Food305" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 192)
+
+[node name="Food306" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 192)
+
+[node name="Food307" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 192)
+
+[node name="Food308" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 192)
+
+[node name="Food309" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 176)
+
+[node name="Food310" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 176)
+
+[node name="Food311" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 176)
+
+[node name="Food312" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 176)
+
+[node name="Food313" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 176)
+
+[node name="Food314" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 176)
+
+[node name="Food315" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 176)
+
+[node name="Food316" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 176)
+
+[node name="Food317" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 176)
+
+[node name="Food318" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 176)
+
+[node name="Food319" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 176)
+
+[node name="Food320" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 176)
+
+[node name="Food321" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 176)
+
+[node name="Food322" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 176)
+
+[node name="Food323" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 176)
+
+[node name="Food324" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 176)
+
+[node name="Food325" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 176)
+
+[node name="Food326" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 176)
+
+[node name="Food327" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, 176)
+
+[node name="Food328" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 176)
+
+[node name="Food329" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 176)
+
+[node name="Food330" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 176)
+
+[node name="Food331" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, 160)
+
+[node name="Food332" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 160)
+
+[node name="Food333" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 160)
+
+[node name="Food334" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 160)
+
+[node name="Food335" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 160)
+
+[node name="Food336" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 160)
+
+[node name="Food337" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 160)
+
+[node name="Food338" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 160)
+
+[node name="Food339" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 160)
+
+[node name="Food340" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 160)
+
+[node name="Food341" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 160)
+
+[node name="Food342" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 160)
+
+[node name="Food343" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 160)
+
+[node name="Food344" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 160)
+
+[node name="Food345" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 160)
+
+[node name="Food346" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 160)
+
+[node name="Food347" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 160)
+
+[node name="Food348" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 160)
+
+[node name="Food349" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 160)
+
+[node name="Food350" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 160)
+
+[node name="Food351" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 160)
+
+[node name="Food352" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 160)
+
+[node name="Food353" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 144)
+
+[node name="Food354" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 144)
+
+[node name="Food355" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 144)
+
+[node name="Food356" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 144)
+
+[node name="Food357" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 144)
+
+[node name="Food358" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 144)
+
+[node name="Food359" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 144)
+
+[node name="Food360" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 144)
+
+[node name="Food361" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 144)
+
+[node name="Food362" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 144)
+
+[node name="Food363" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 144)
+
+[node name="Food364" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 144)
+
+[node name="Food365" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 144)
+
+[node name="Food366" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 144)
+
+[node name="Food367" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 144)
+
+[node name="Food368" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 144)
+
+[node name="Food369" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 144)
+
+[node name="Food370" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 144)
+
+[node name="Food371" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, 144)
+
+[node name="Food372" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 144)
+
+[node name="Food373" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 144)
+
+[node name="Food374" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 144)
+
+[node name="Food375" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, 128)
+
+[node name="Food376" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 128)
+
+[node name="Food377" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 128)
+
+[node name="Food378" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 128)
+
+[node name="Food379" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 128)
+
+[node name="Food380" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 128)
+
+[node name="Food381" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 128)
+
+[node name="Food382" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 128)
+
+[node name="Food383" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 128)
+
+[node name="Food384" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 128)
+
+[node name="Food385" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 128)
+
+[node name="Food386" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 128)
+
+[node name="Food387" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 128)
+
+[node name="Food388" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 128)
+
+[node name="Food389" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 128)
+
+[node name="Food390" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 128)
+
+[node name="Food391" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 128)
+
+[node name="Food392" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 128)
+
+[node name="Food393" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 128)
+
+[node name="Food394" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 128)
+
+[node name="Food395" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 128)
+
+[node name="Food396" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 128)
+
+[node name="Food397" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 112)
+
+[node name="Food398" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 112)
+
+[node name="Food399" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 112)
+
+[node name="Food400" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 112)
+
+[node name="Food401" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 112)
+
+[node name="Food402" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 112)
+
+[node name="Food403" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 112)
+
+[node name="Food404" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 112)
+
+[node name="Food405" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 112)
+
+[node name="Food406" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 112)
+
+[node name="Food407" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 112)
+
+[node name="Food408" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 112)
+
+[node name="Food409" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 112)
+
+[node name="Food410" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 112)
+
+[node name="Food411" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 112)
+
+[node name="Food412" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 112)
+
+[node name="Food413" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 112)
+
+[node name="Food414" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 112)
+
+[node name="Food415" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, 112)
+
+[node name="Food416" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 112)
+
+[node name="Food417" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 112)
+
+[node name="Food418" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 112)
+
+[node name="Food419" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, 96)
+
+[node name="Food420" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 96)
+
+[node name="Food421" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 96)
+
+[node name="Food422" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 96)
+
+[node name="Food423" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 96)
+
+[node name="Food424" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 96)
+
+[node name="Food425" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 96)
+
+[node name="Food426" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 96)
+
+[node name="Food427" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 96)
+
+[node name="Food428" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 96)
+
+[node name="Food429" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 96)
+
+[node name="Food430" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 96)
+
+[node name="Food431" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 96)
+
+[node name="Food432" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 96)
+
+[node name="Food433" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 96)
+
+[node name="Food434" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 96)
+
+[node name="Food435" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 96)
+
+[node name="Food436" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 96)
+
+[node name="Food437" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 96)
+
+[node name="Food438" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 96)
+
+[node name="Food439" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 96)
+
+[node name="Food440" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 96)
+
+[node name="Food441" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 80)
+
+[node name="Food442" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 80)
+
+[node name="Food443" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 80)
+
+[node name="Food444" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 80)
+
+[node name="Food445" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 80)
+
+[node name="Food446" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 80)
+
+[node name="Food447" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 80)
+
+[node name="Food448" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 80)
+
+[node name="Food449" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 80)
+
+[node name="Food450" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 80)
+
+[node name="Food451" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 80)
+
+[node name="Food452" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 80)
+
+[node name="Food453" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 80)
+
+[node name="Food454" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 80)
+
+[node name="Food455" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 80)
+
+[node name="Food456" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 80)
+
+[node name="Food457" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 80)
+
+[node name="Food458" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 80)
+
+[node name="Food459" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, 80)
+
+[node name="Food460" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 80)
+
+[node name="Food461" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 80)
+
+[node name="Food462" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 80)
+
+[node name="Food463" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, 64)
+
+[node name="Food464" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 64)
+
+[node name="Food465" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 64)
+
+[node name="Food466" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 64)
+
+[node name="Food467" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 64)
+
+[node name="Food468" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 64)
+
+[node name="Food469" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 64)
+
+[node name="Food470" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 64)
+
+[node name="Food471" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 64)
+
+[node name="Food472" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 64)
+
+[node name="Food473" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 64)
+
+[node name="Food474" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 64)
+
+[node name="Food475" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 64)
+
+[node name="Food476" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 64)
+
+[node name="Food477" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 64)
+
+[node name="Food478" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 64)
+
+[node name="Food479" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 64)
+
+[node name="Food480" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 64)
+
+[node name="Food481" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 64)
+
+[node name="Food482" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 64)
+
+[node name="Food483" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 64)
+
+[node name="Food484" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 64)
+
+[node name="Food485" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 48)
+
+[node name="Food486" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 48)
+
+[node name="Food487" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 48)
+
+[node name="Food488" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 48)
+
+[node name="Food489" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 48)
+
+[node name="Food490" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 48)
+
+[node name="Food491" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 48)
+
+[node name="Food492" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 48)
+
+[node name="Food493" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 48)
+
+[node name="Food494" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 48)
+
+[node name="Food495" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 48)
+
+[node name="Food496" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 48)
+
+[node name="Food497" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 48)
+
+[node name="Food498" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 48)
+
+[node name="Food499" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 48)
+
+[node name="Food500" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 48)
+
+[node name="Food501" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 48)
+
+[node name="Food502" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 48)
+
+[node name="Food503" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(128, 48)
+
+[node name="Food504" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 48)
+
+[node name="Food505" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 48)
+
+[node name="Food506" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 48)
+
+[node name="Food507" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-224, 32)
+
+[node name="Food508" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-208, 32)
+
+[node name="Food509" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-192, 32)
+
+[node name="Food510" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-176, 32)
+
+[node name="Food511" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-160, 32)
+
+[node name="Food512" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-144, 32)
+
+[node name="Food513" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-128, 32)
+
+[node name="Food514" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-112, 32)
+
+[node name="Food515" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-96, 32)
+
+[node name="Food516" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-80, 32)
+
+[node name="Food517" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-64, 32)
+
+[node name="Food518" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-48, 32)
+
+[node name="Food519" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-32, 32)
+
+[node name="Food520" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(-16, 32)
+
+[node name="Food521" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(0, 32)
+
+[node name="Food522" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(16, 32)
+
+[node name="Food523" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(80, 32)
+
+[node name="Food524" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(96, 32)
+
+[node name="Food525" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(112, 32)
+
+[node name="Food526" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(32, 32)
+
+[node name="Food527" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(48, 32)
+
+[node name="Food528" parent="." instance=ExtResource("2_06vts")]
+position = Vector2(64, 32)

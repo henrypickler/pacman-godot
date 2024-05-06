@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://dasisyhg17cn6"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/MainMenu/MainMenu.gd" id="1_i136m"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_i136m")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="Container" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="MarginContainer/Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 192
+text = "Pacman
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Container"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Play" type="Button" parent="MarginContainer/Container"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/Container"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+text = "Options"
+
+[node name="Exit" type="Button" parent="MarginContainer/Container"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/Container/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/Container/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/Container/Exit" to="." method="_on_exit_pressed"]

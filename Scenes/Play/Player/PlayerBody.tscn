@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dikpm7jnc5yqr"]
+
+[ext_resource type="SpriteFrames" uid="uid://mldvxafmmcm6" path="res://Scenes/Play/pacman-anim.tres" id="1_2gfcu"]
+[ext_resource type="Texture2D" uid="uid://dbdynwyylae8p" path="res://Images/ghost_eyes_back.png" id="2_m5trc"]
+[ext_resource type="Texture2D" uid="uid://ccvd7dn2vhjvu" path="res://Images/ghost_eyes.png" id="3_qcqx0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6vooi"]
+radius = 4.0
+
+[node name="Body" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_2gfcu")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 0)
+shape = SubResource("CircleShape2D_6vooi")
+
+[node name="Eyes" type="Node2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Eyes"]
+position = Vector2(3, -2)
+texture = ExtResource("2_m5trc")
+
+[node name="Offset" type="Node2D" parent="Eyes"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Eyes/Offset"]
+position = Vector2(3, -2)
+texture = ExtResource("3_qcqx0")

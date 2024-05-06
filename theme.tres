@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://coa6rmfr1omq0"]
+
+[ext_resource type="FontFile" uid="uid://cyunwh2cjwm4g" path="res://rainyhearts.ttf" id="1_8p67g"]
+
+[resource]
+default_font = ExtResource("1_8p67g")
+Label/fonts/font = ExtResource("1_8p67g")

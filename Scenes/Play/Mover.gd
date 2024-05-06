@@ -66,8 +66,7 @@ func get_global_body_pos_from_map_pos(map_pos : Vector2i) -> Vector2:
 func _update_path():
 	var from_dir_vec = Vector2(dir_to_vec(from_direction))
 	var grid_pos_vec = get_global_body_pos_from_map_pos(grid_pos)
-	var from_dt = - Tilemap.to_global(from_dir_vec)*grid_size/2
-	var from = to_local(grid_pos_vec + from_dt)
+	var from = round($Body.position)
 	var to_dir_vec = Vector2(dir_to_vec(to_direction))
 	var to_dt = Tilemap.to_global(to_dir_vec)*grid_size/2
 	var to = to_local(grid_pos_vec + to_dt)

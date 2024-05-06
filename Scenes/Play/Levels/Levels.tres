@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="Levels" load_steps=13 format=3 uid="uid://bx40cr515jxpm"]
+
+[ext_resource type="Script" path="res://Scenes/Play/Levels/LevelData.gd" id="1_avu47"]
+[ext_resource type="Script" path="res://Scenes/Play/Levels/levels.gd" id="1_kehnn"]
+
+[sub_resource type="Resource" id="Resource_777cg"]
+script = ExtResource("1_avu47")
+starting_ghosts = 1
+ghosts = 2
+ghost_intelligence = 0.4
+ghost_interval = 15.0
+level_color = Color(0, 0.109804, 0.623529, 1)
+
+[sub_resource type="Resource" id="Resource_subon"]
+script = ExtResource("1_avu47")
+starting_ghosts = 1
+ghosts = 3
+ghost_intelligence = 0.4
+ghost_interval = 15.0
+level_color = Color(0, 0.368627, 0.415686, 1)
+
+[sub_resource type="Resource" id="Resource_ub447"]
+script = ExtResource("1_avu47")
+starting_ghosts = 1
+ghosts = 4
+ghost_intelligence = 0.35
+ghost_interval = 15.0
+level_color = Color(0, 0.376471, 0.301961, 1)
+
+[sub_resource type="Resource" id="Resource_oleq2"]
+script = ExtResource("1_avu47")
+starting_ghosts = 2
+ghosts = 5
+ghost_intelligence = 0.3
+ghost_interval = 15.0
+level_color = Color(0, 0.4, 0.215686, 1)
+
+[sub_resource type="Resource" id="Resource_u1xg3"]
+script = ExtResource("1_avu47")
+starting_ghosts = 1
+ghosts = 2
+ghost_intelligence = 1.5
+ghost_interval = 5.0
+level_color = Color(0.27451, 0.352941, 0, 1)
+
+[sub_resource type="Resource" id="Resource_sjf0y"]
+script = ExtResource("1_avu47")
+starting_ghosts = 1
+ghosts = 3
+ghost_intelligence = 1.2
+ghost_interval = 5.0
+level_color = Color(0.364706, 0.333333, 0, 1)
+
+[sub_resource type="Resource" id="Resource_q5k71"]
+script = ExtResource("1_avu47")
+starting_ghosts = 1
+ghosts = 4
+ghost_intelligence = 1.0
+ghost_interval = 5.0
+level_color = Color(0.470588, 0.317647, 0, 1)
+
+[sub_resource type="Resource" id="Resource_4epe5"]
+script = ExtResource("1_avu47")
+starting_ghosts = 1
+ghosts = 5
+ghost_intelligence = 1.0
+ghost_interval = 5.0
+level_color = Color(0.509804, 0.239216, 0, 1)
+
+[sub_resource type="Resource" id="Resource_1k61h"]
+script = ExtResource("1_avu47")
+starting_ghosts = 1
+ghosts = 5
+ghost_intelligence = 1.5
+ghost_interval = 7.5
+level_color = Color(0.509804, 0, 0.0627451, 1)
+
+[sub_resource type="Resource" id="Resource_2b05w"]
+script = ExtResource("1_avu47")
+starting_ghosts = 1
+ghosts = 6
+ghost_intelligence = 1.8
+ghost_interval = 3.5
+level_color = Color(0.345098, 0, 0.321569, 1)
+
+[resource]
+script = ExtResource("1_kehnn")
+levels = Array[ExtResource("1_avu47")]([SubResource("Resource_777cg"), SubResource("Resource_subon"), SubResource("Resource_ub447"), SubResource("Resource_oleq2"), SubResource("Resource_u1xg3"), SubResource("Resource_sjf0y"), SubResource("Resource_q5k71"), SubResource("Resource_4epe5"), SubResource("Resource_1k61h"), SubResource("Resource_2b05w")])

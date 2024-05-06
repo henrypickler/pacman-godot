@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://dpf037bm6pgrb"]
+
+[ext_resource type="Script" path="res://Scenes/Play/Levels/LevelData.gd" id="1_ylbud"]
+
+[resource]
+script = ExtResource("1_ylbud")
+ghosts = 3

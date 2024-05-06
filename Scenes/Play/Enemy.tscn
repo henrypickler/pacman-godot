@@ -1,17 +1,44 @@
-[gd_scene load_steps=6 format=3 uid="uid://bthjdvor1hlkh"]
+[gd_scene load_steps=8 format=3 uid="uid://bthjdvor1hlkh"]
 
 [ext_resource type="Script" path="res://Scenes/Play/Enemy.gd" id="1_7f0fn"]
 [ext_resource type="Texture2D" uid="uid://cydq77q1eqcmk" path="res://Images/ghost_test.png" id="2_qm3sq"]
 [ext_resource type="Texture2D" uid="uid://dbdynwyylae8p" path="res://Images/ghost_eyes_back.png" id="3_c5c4m"]
 [ext_resource type="Texture2D" uid="uid://ccvd7dn2vhjvu" path="res://Images/ghost_eyes.png" id="4_6b2ml"]
+[ext_resource type="Texture2D" uid="uid://brhtbw6187gb1" path="res://Images/poof-particle.png" id="5_p8r4x"]
+
+[sub_resource type="Curve" id="Curve_6m5gw"]
+max_value = 2.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.242553, 1), 6.03727, 6.03727, 0, 0, Vector2(0.617021, 1.36264), -4.35783, -4.35783, 0, 0, Vector2(0.838298, 0.593407), 0.0, 0.0, 0, 0, Vector2(1, 0.054945), 0.0, 0.0, 0, 0]
+point_count = 5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_js4d4"]
 radius = 7.0
 
 [node name="Ghost" type="Node2D"]
 script = ExtResource("1_7f0fn")
+rotate_with_curve = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+top_level = true
+emitting = false
+amount = 64
+one_shot = true
+explosiveness = 0.59
+texture = ExtResource("5_p8r4x")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 16.0
+initial_velocity_max = 32.0
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+linear_accel_min = -16.0
+linear_accel_max = -16.0
+angle_max = 360.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_6m5gw")
 
 [node name="Body" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -43,4 +70,13 @@ texture = ExtResource("4_6b2ml")
 position = Vector2(3, -2)
 texture = ExtResource("4_6b2ml")
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Body"]
+remote_path = NodePath("../../CPUParticles2D")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="Body" to="." method="player_collision"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
