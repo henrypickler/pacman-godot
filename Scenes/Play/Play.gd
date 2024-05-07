@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var Enemy = preload("res://Scenes/Play/Enemy.tscn")
+@onready var EnemySpawner = preload("res://Scenes/Play/Enemy/EnemySpawn.tscn")
 @onready var Player = preload("res://Scenes/Play/Player/Player.tscn")
 var _current_spawn = 0
 
@@ -9,6 +9,11 @@ func _ready():
 	GameManagerAutoload.foodspawner = $"FoodSpawner"
 	GameManagerAutoload.lifesAndPointsGUI = $"LifesAndPoints"
 	GameManagerAutoload.sync_gui()
+	if not MusicPlayerAutoload.playing:
+		MusicPlayerAutoload.start()
+	else:
+		if MusicPlayerAutoload.pitch_scale < 1:
+			MusicPlayerAutoload.unpause()
 	register_players()
 	var level_data = GameManagerAutoload.get_current_level_data()
 	setup_level(level_data)
@@ -21,12 +26,12 @@ func register_players():
 	GameManagerAutoload.players = players
 
 func new_ghost(level_data : LevelData):
-	var new_enemy = Enemy.instantiate()
+	var new_enemy = EnemySpawner.instantiate()
 	new_enemy.position = Vector2(448 + 2*(randf()-0.5)*56, 500)/3
 	new_enemy.Tilemap = $"TileMap"
-	new_enemy.chase_temperature = -1/level_data.ghost_intelligence
-	new_enemy.movement_speed *= level_data.speed_multiplier
+	new_enemy.level_data = level_data
 	add_child(new_enemy)
+
 
 func get_spawn_point(n):
 	return %SpawnPoints.get_child(n).position
@@ -39,7 +44,14 @@ func spawn_player(player_data, spawn_point_n):
 	new_player.color = player_data.color
 	new_player.device = player_data.device
 	add_child(new_player)
-	
+
+func wait(time):
+	var new_timer = Timer.new()
+	new_timer.wait_time = time
+	new_timer.connect("timeout", new_timer.queue_free)
+	add_child(new_timer)
+	new_timer.start()
+	await new_timer.timeout
 
 func setup_level(level_data : LevelData):
 	var tilemap = $"TileMap"
@@ -50,12 +62,18 @@ func setup_level(level_data : LevelData):
 		spawn_player(player_data, i)
 		i += 1
 	
-	await get_tree().create_timer(1.5).timeout
+	await wait(1.5)
 	
 	for _j in range(level_data.starting_ghosts):
 		new_ghost(level_data)
-		await get_tree().create_timer(randf()+0.5).timeout
+		await wait(randf()+0.5)
+
 	
 	for _j in range(max(level_data.ghosts - level_data.starting_ghosts, 0)):
-		await get_tree().create_timer(level_data.ghost_interval).timeout
+		await wait(level_data.ghost_interval)
 		new_ghost(level_data)
+
+func _input(event):
+	if event.is_action_pressed("Pause"):
+		MusicPlayerAutoload.pause()
+		GameManagerAutoload.pause_game()

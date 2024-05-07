@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://2bwkw6s5yr4c"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/Options/Options.gd" id="1_m8c4b"]
+[ext_resource type="Script" path="res://Scenes/Utils/SoundEffectPlayer.gd" id="2_h6aop"]
+[ext_resource type="AudioStream" uid="uid://dk7ua4lamew01" path="res://Sounds/pickupCoin.wav" id="2_r6udp"]
+
+[node name="Options" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m8c4b")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Effects volume"
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 48
+text = "Music volume"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SoundEffectVolumeSlider" type="HSlider" parent="HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+min_value = -70.0
+max_value = 0.0
+
+[node name="MusicVolumeSlider" type="HSlider" parent="HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+min_value = -70.0
+max_value = 0.0
+
+[node name="Spacer" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_r6udp")
+script = ExtResource("2_h6aop")
+
+[connection signal="pressed" from="BackButton" to="." method="back"]

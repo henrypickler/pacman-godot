@@ -1,10 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://cylq0s588pioq"]
+[gd_scene load_steps=24 format=3 uid="uid://cylq0s588pioq"]
 
 [ext_resource type="Script" path="res://Scenes/Play/Player/Player.gd" id="1_vl75v"]
 [ext_resource type="SpriteFrames" uid="uid://mldvxafmmcm6" path="res://Scenes/Play/pacman-anim.tres" id="2_ew67e"]
 [ext_resource type="Texture2D" uid="uid://dbdynwyylae8p" path="res://Images/ghost_eyes_back.png" id="3_2bdby"]
 [ext_resource type="Texture2D" uid="uid://biqk34l0p6qeg" path="res://Images/stun-effect-sheet.png" id="3_nrj1d"]
 [ext_resource type="Texture2D" uid="uid://ccvd7dn2vhjvu" path="res://Images/ghost_eyes.png" id="4_508lq"]
+[ext_resource type="AudioStream" uid="uid://dk7ua4lamew01" path="res://Sounds/pickupCoin.wav" id="6_7jg1d"]
+[ext_resource type="AudioStream" uid="uid://dvrtwtgxnc7ko" path="res://Sounds/hitHurt.wav" id="7_60thq"]
+[ext_resource type="Script" path="res://Scenes/Utils/SoundEffectPlayer.gd" id="7_jphc0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6vooi"]
 radius = 4.0
@@ -193,6 +196,18 @@ position = Vector2(1, -4)
 sprite_frames = SubResource("SpriteFrames_yk6k5")
 animation = &"start"
 autoplay = "start"
+
+[node name="PointSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_7jg1d")
+volume_db = -5.0
+max_polyphony = 4
+script = ExtResource("7_jphc0")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_60thq")
+script = ExtResource("7_jphc0")
 
 [connection signal="area_entered" from="Body/Area2D" to="." method="_player_bump"]
 [connection signal="timeout" from="Timer" to="." method="end_invincibility"]

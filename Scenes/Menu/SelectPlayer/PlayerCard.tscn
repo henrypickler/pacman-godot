@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://efk15g01culb"]
+[gd_scene load_steps=5 format=3 uid="uid://efk15g01culb"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/SelectPlayer/PlayerCard.gd" id="1_pg35o"]
 [ext_resource type="Texture2D" uid="uid://6v8ibxf4eixh" path="res://Images/pacman.png" id="1_vv0ro"]
+[ext_resource type="Texture2D" uid="uid://buvrjkn0uraqt" path="res://Images/enter.png" id="3_s85hh"]
+[ext_resource type="Texture2D" uid="uid://dx4iy20x4pnms" path="res://Images/x_button.png" id="4_m0oud"]
 
 [node name="PlayerCard" type="VBoxContainer"]
-custom_minimum_size = Vector2(244, 340)
+custom_minimum_size = Vector2(0, 340)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -656.0
+offset_right = -710.0
 offset_bottom = -710.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -16,7 +18,8 @@ script = ExtResource("1_pg35o")
 
 [node name="Active" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(244, 340)
+visible = false
+custom_minimum_size = Vector2(0, 340)
 layout_mode = 2
 
 [node name="PanelContainer3" type="PanelContainer" parent="Active"]
@@ -29,7 +32,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 48
 text = "Player 1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -90,17 +93,35 @@ text = "Ready"
 
 [node name="Inactive" type="CenterContainer" parent="."]
 unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(244, 0)
+custom_minimum_size = Vector2(0, 340)
 layout_mode = 2
-size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Inactive"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Inactive"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label2" type="Label" parent="Inactive/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Press any button
-to enter"
-horizontal_alignment = 1
+text = "Press "
+
+[node name="TextureRect" type="TextureRect" parent="Inactive/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_s85hh")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="Inactive/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = " or "
+
+[node name="TextureRect2" type="TextureRect" parent="Inactive/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_m0oud")
+expand_mode = 2
+stretch_mode = 5
 
 [connection signal="pressed" from="Active/VBoxContainer/HBoxContainer/PreviousColor" to="." method="_on_previous_color_pressed"]
 [connection signal="pressed" from="Active/VBoxContainer/HBoxContainer/NextColor" to="." method="_on_next_color_pressed"]

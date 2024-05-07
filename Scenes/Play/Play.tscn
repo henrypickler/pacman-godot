@@ -56,3 +56,5 @@ position = Vector2(200, 200)
 
 [node name="UL" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(104, 136)
+
+[node name="SpawnTimer" type="Timer" parent="."]

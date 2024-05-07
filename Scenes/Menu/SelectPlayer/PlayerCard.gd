@@ -42,14 +42,12 @@ func _ready():
 
 func _draw():
 	if state == PLAYER_CARD_STATES.ACTIVE and focus != null:
-		print(focus)
 		var pos = focus.global_position - global_position
 		var s = focus.size
 		draw_rect(Rect2(pos, s), Color.BLUE, false, 5)
 
 func set_device(new_device):
 	device = new_device
-	print(device)
 	if device != null:
 		state = PLAYER_CARD_STATES.ACTIVE
 		focus = get_node("Active/VBoxContainer/Ready")
@@ -79,9 +77,9 @@ func set_focus(new_focus):
 	focus = new_focus
 	queue_redraw()
 
-func click_on_control(control):
+func click_on_control(control : Control):
 	var click_event = InputEventMouseButton.new()
-	click_event.position = control.global_position
+	click_event.position = control.get_rect().size / 2 + control.global_position
 	click_event.pressed = true
 	click_event.button_index = MOUSE_BUTTON_LEFT
 	Input.parse_input_event(click_event)
@@ -98,7 +96,7 @@ func click_on_control(control):
 
 func _active_input(input):
 	if input.is_action_pressed("Joypad Leave"):
-		emit_signal("deactivate", device)
+		call_deferred("emit_signal", "deactivate", device)
 		return
 	if focus != null:
 		var new_focus
@@ -118,7 +116,6 @@ func _active_input(input):
 		if input.is_action_pressed("ui_accept"):
 			click_on_control(focus)
 			#focus.emit_signal("pressed")
-
 
 func _input(input : InputEvent):
 	if input.device != device:

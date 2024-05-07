@@ -24,65 +24,75 @@ size_flags_vertical = 3
 [node name="Cards" type="GridContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 3
 size_flags_stretch_ratio = 8.0
 theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
-columns = 3
+columns = 4
 
 [node name="PlayerCard" parent="Cards" instance=ExtResource("2_38mvh")]
-custom_minimum_size = Vector2(200, 340)
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="PlayerCard2" parent="Cards" instance=ExtResource("2_38mvh")]
-custom_minimum_size = Vector2(200, 340)
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 player = 2
 
 [node name="PlayerCard3" parent="Cards" instance=ExtResource("2_38mvh")]
-custom_minimum_size = Vector2(200, 340)
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 player = 3
 
 [node name="PlayerCard4" parent="Cards" instance=ExtResource("2_38mvh")]
-custom_minimum_size = Vector2(200, 340)
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 player = 4
 
 [node name="PlayerCard5" parent="Cards" instance=ExtResource("2_38mvh")]
-custom_minimum_size = Vector2(200, 340)
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 player = 5
 
 [node name="PlayerCard6" parent="Cards" instance=ExtResource("2_38mvh")]
-custom_minimum_size = Vector2(200, 340)
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 player = 6
 
 [node name="PlayerCard7" parent="Cards" instance=ExtResource("2_38mvh")]
-visible = false
-custom_minimum_size = Vector2(200, 340)
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 player = 7
 
 [node name="PlayerCard8" parent="Cards" instance=ExtResource("2_38mvh")]
-visible = false
-custom_minimum_size = Vector2(200, 340)
+custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 player = 8
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 96
+text = "  Back  "
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

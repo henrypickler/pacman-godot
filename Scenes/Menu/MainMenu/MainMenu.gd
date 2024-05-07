@@ -5,11 +5,10 @@ func _ready():
 
 func _on_play_pressed():
 	LevelManagerAutoload.transition_to("res://Scenes/Menu/SelectPlayer/SelectPlayer.tscn")
-	GameManagerAutoload.reset_score()
 
 
 func _on_options_pressed():
-	pass
+	LevelManagerAutoload.transition_to("res://Scenes/Menu/Options/Options.tscn")
 
 
 func _on_exit_pressed():

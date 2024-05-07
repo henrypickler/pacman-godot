@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://1a3yp4q5rhpc"]
+
+[ext_resource type="Script" path="res://Scenes/Play/Enemy/EnemySpawn.gd" id="1_6qbx8"]
+[ext_resource type="AudioStream" uid="uid://ddes0r22bw3gd" path="res://Sounds/enemySpawn.wav" id="2_au5h4"]
+[ext_resource type="Texture2D" uid="uid://brhtbw6187gb1" path="res://Images/poof-particle.png" id="3_djcyj"]
+[ext_resource type="Script" path="res://Scenes/Utils/SoundEffectPlayer.gd" id="3_ts0ko"]
+
+[sub_resource type="Animation" id="Animation_ai7jo"]
+resource_name = "spawn"
+length = 1.3
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpawnSoundEffect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_au5h4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_on_animation_finished"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4gpc"]
+_data = {
+"spawn": SubResource("Animation_ai7jo")
+}
+
+[sub_resource type="Curve" id="Curve_lvvh5"]
+max_value = 2.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.242553, 1), 6.03727, 6.03727, 0, 0, Vector2(0.617021, 1.36264), -4.35783, -4.35783, 0, 0, Vector2(0.838298, 0.593407), 0.0, 0.0, 0, 0, Vector2(1, 0.054945), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[node name="EnemySpawn" type="Node2D"]
+script = ExtResource("1_6qbx8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h4gpc")
+}
+autoplay = "spawn"
+
+[node name="SpawnSoundEffect" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
+pitch_scale = 0.8
+script = ExtResource("3_ts0ko")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 1
+emitting = false
+amount = 64
+one_shot = true
+explosiveness = 0.59
+texture = ExtResource("3_djcyj")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 16.0
+initial_velocity_max = 32.0
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+linear_accel_min = -16.0
+linear_accel_max = -16.0
+angle_max = 360.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_lvvh5")

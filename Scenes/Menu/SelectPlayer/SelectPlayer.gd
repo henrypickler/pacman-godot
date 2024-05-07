@@ -42,6 +42,7 @@ func start_game():
 		if Card.is_ready():
 			player_data.append(Card.get_player_data())
 	GameManagerAutoload.player_data = player_data
+	GameManagerAutoload.reset_score()
 	LevelManagerAutoload.transition_to("res://Scenes/Play/Play.tscn")
 
 func is_joypad_attached(device):
@@ -56,3 +57,11 @@ func _input(event):
 	if event.is_action_pressed("Joypad Join"):
 		if not is_joypad_attached(event.device):
 			add_player(event.device)
+	if event.is_action_pressed("Joypad Leave"):
+		if not is_joypad_attached(event.device):
+			LevelManagerAutoload.transition_to("res://Scenes/Menu/MainMenu/MainMenu.tscn")
+
+
+
+func _on_back_button_pressed():
+	LevelManagerAutoload.transition_to("res://Scenes/Menu/MainMenu/MainMenu.tscn")

@@ -15,9 +15,12 @@ func _ready():
 	super._ready()
 	_end_of_path()
 	color = color
+	%PointSound.volume_db = GlobalOptionsAutoload.options["sound_effects_volume_db"]
+	%HitSound.volume_db = GlobalOptionsAutoload.options["sound_effects_volume_db"]
 
 func took_damage():
 	is_invincible = true
+	%HitSound.play()
 	$Timer.start(INVENCIBILITY_TIME)
 
 func end_invincibility():
